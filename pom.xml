@@ -82,7 +82,7 @@
     <lombok.version>1.18.26</lombok.version>
     <junit.version>5.9.2</junit.version>
     <mockito.version>5.2.0</mockito.version>
-    <bytebuddy.version>1.14.1</bytebuddy.version>
+    <bytebuddy.version>1.14.3</bytebuddy.version>
   </properties>
   <dependencyManagement>
     <dependencies>
