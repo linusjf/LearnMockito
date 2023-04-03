@@ -188,20 +188,22 @@
           <version>${maven.surefire.plugin.version}</version>
           <configuration>
             <forkCount>1</forkCount>
-            <reuseForks>false</reuseForks>
+            <reuseForks>true</reuseForks>
             <forkedProcessExitTimeoutInSeconds>
             30</forkedProcessExitTimeoutInSeconds>
             <shutdown>kill</shutdown>
             <jvm>${env.JAVA_HOME}/bin/java</jvm>
             <runOrder>alphabetical</runOrder>
             <rerunFailingTestsCount>0</rerunFailingTestsCount>
-            <argline>-Xms1g -Xmx4g -XX:MaxMetaspaceSize=512m
-            -XX:+StartAttachListener</argline>
+            <!-- <argline>-Xms1g -Xmx4g -XX:MaxMetaspaceSize=512m -XX:+StartAttachListener</argline>-->
+            <argline>-Xms1g -Xmx4g
+            -XX:MaxMetaspaceSize=512m</argline>
             <argline>--illegal-access=deny</argline>
-            <argline>-Djavaagent=byte-buddy-agent-*.jar</argline>
+            <!-- <argline>-Djavaagent=byte-buddy-agent-*.jar</argline>
             <argline>-Djdk.attach.allowAttachSelf=true</argline>
-            <argline>--add-opens lm/lm=ALL-UNNAMED</argline>
-            <useModulePath>true</useModulePath>
+      <argline>-->
+            <!--add-opens lm/lm=ALL-UNNAMED</argline>-->
+            <useModulePath>false</useModulePath>
             <trimStackTrace>true</trimStackTrace>
             <useSystemClassLoader>true</useSystemClassLoader>
             <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory" />
@@ -244,8 +246,8 @@
                 <showWarnings>true</showWarnings>
                 <verbose>true</verbose>
                 <compilerArgs>
-                  <arg>
-                  -J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                  <!--  <arg>-J-->
+                  <!--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>-->
                   <arg>-Awarns</arg>
                 </compilerArgs>
               </configuration>
@@ -269,8 +271,8 @@
                 <showWarnings>true</showWarnings>
                 <verbose>true</verbose>
                 <compilerArgs>
-                  <arg>
-                  -J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                  <!--  <arg>-J-->
+                  <!--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>-->
                   <arg>-Awarns</arg>
                 </compilerArgs>
               </configuration>
