@@ -76,7 +76,7 @@
     1.2.1</maven.properties.plugin.version>
     <gmavenplus.plugin.version>2.1.0</gmavenplus.plugin.version>
     <junit.version>5.10.1</junit.version>
-    <mockito.version>5.8.0</mockito.version>
+    <mockito.version>5.9.0</mockito.version>
     <bytebuddy.version>1.14.11</bytebuddy.version>
   </properties>
   <dependencyManagement>
